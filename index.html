@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>曹永谦 · AI 产品专员 / AI 产品经理</title>
+<meta name="description" content="曹永谦，现居杭州。AI 产品专员：懂算法开发，也懂 AI 产品落地。作品含元柒科技的四个 AI 项目，以及自己搭的花型 Agent、评测台、监管台等产品。">
+<meta name="theme-color" content="#f7f9f8">
+<meta property="og:title" content="曹永谦 · AI 产品专员 / AI 产品经理">
+<meta property="og:description" content="懂服饰业务，也懂 AI 怎么落地。四个工作项目 + 五个自己做的 AI 产品。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2306525c'/%3E%3Ctext x='16' y='23' font-family='serif' font-size='20' fill='%23f7f9f8' text-anchor='middle'%3E曹%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="preload" href="assets/fonts/young-serif-400-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<a class="skip" href="#work">跳到作品</a>
+
+<div class="site" id="top">
+
+  <!-- 固定的一半：始终在场的画面 -->
+  <aside class="stage" id="stage" aria-hidden="true">
+    <div class="stage__frame">
+      <img class="stage__img is-on" id="stage-hero" src="assets/img/man-at-night.jpg" alt="" width="1200" height="1500">
+      <video class="stage__video" id="stage-video" muted loop playsinline preload="none" poster="assets/video/waves-poster.jpg">
+        <source src="assets/video/waves.webm" type="video/webm">
+      </video>
+    </div>
+    <p class="stage__cap"><span id="stage-cap">曹永谦 · 现居杭州</span></p>
+    <p class="stage__label"><strong id="stage-label-title"></strong><span id="stage-label-meta"></span></p>
+  </aside>
+
+  <!-- 滚动的一半 -->
+  <div class="column">
+
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="回到顶部">
+        <span class="wordmark__cn">曹永谦</span>
+        <span class="wordmark__en">Cao Yongqian</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#work" data-nav="work">作品</a>
+        <a href="#about" data-nav="about">关于</a>
+        <a href="#experience" data-nav="experience">经历</a>
+        <a href="#contact" data-nav="contact">联系</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 class="hero__title" id="hero-title"><span>懂算法开发，</span><span>也懂 AI 产品落地。</span></h1>
+      <p class="hero__lead" id="hero-lead">曹永谦，现居杭州。2024 年转做 AI 产品：从业务调研、需求拆解做到项目验收与内部陪跑，也自己搭了一整套 AI 工具。</p>
+      <div class="hero__acts">
+        <a class="btn" href="#work" id="hero-cta">看作品</a>
+        <a class="btn btn--ghost" id="hero-resume" href="assets/files/resume-caoyongqian.pdf" download>下载简历<small>PDF</small></a>
+      </div>
+      <ul class="links" id="hero-links">
+        <li><a href="mailto:646109452@qq.com">646109452@qq.com</a></li>
+        <li><a href="tel:15582673061">155 8267 3061</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </section>
+
+    <noscript>
+      <div class="noscript">
+        <p>这一页的作品、能力与联系表由 JavaScript 渲染。没有脚本也能拿到全部文字：</p>
+        <p><a class="btn" href="assets/files/resume-caoyongqian.pdf" download>下载简历（PDF）</a></p>
+        <p><a href="mailto:646109452@qq.com">646109452@qq.com</a> · 155 8267 3061 · 现居杭州</p>
+        <p>作品：服饰 AIGC 落地 / 多模态与图像算法 / 3D 模型自动化 / 花型素材库 / PatternFlow / Alevo 评测台 / Sentinel-AI / MuseNex / Agent 智能工作台。每件的过程与附件见上面的 PDF 与简历。</p>
+      </div>
+    </noscript>
+
+    <main>
+
+      <section class="about" id="about" aria-labelledby="about-title" data-stage="about" data-cap="关于 · 曹永谦">
+        <h2 class="sec-title" id="about-title">关于</h2>
+        <div class="prose" id="about-prose"></div>
+      </section>
+
+      <section class="work" id="work" aria-labelledby="work-title" data-stage="project" data-cap="作品 · 六件">
+        <div class="work__head">
+          <h2 class="sec-title" id="work-title">作品</h2>
+          <p class="work__hint">按下面的标签筛选，点一行看完整案例。</p>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="按类型筛选作品"></div>
+        <ol class="ledger" id="ledger"></ol>
+        <p class="ledger__empty" id="ledger-empty" hidden>这一类暂时没有项目。<button class="textbtn" type="button" id="ledger-reset">看全部</button></p>
+      </section>
+
+      <section class="skills" id="skills" aria-labelledby="skills-title" data-stage="skills" data-cap="合作方式">
+        <h2 class="sec-title" id="skills-title"></h2>
+        <p class="skills__note" id="skills-note"></p>
+        <div class="sheet" id="skills-sheet"></div>
+      </section>
+
+      <section class="experience" id="experience" aria-labelledby="experience-title" data-stage="experience" data-cap="经历 · 2016 至今">
+        <h2 class="sec-title" id="experience-title">经历</h2>
+        <ol class="ledger ledger--exp" id="experience-list"></ol>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title" data-stage="video" data-cap="入夜">
+        <h2 class="sec-title" id="contact-title">联系</h2>
+        <p class="contact__lead" id="contact-lead"></p>
+        <ul class="rows" id="contact-rows"></ul>
+        <div class="contact__foot">
+          <a class="btn" id="contact-mail" href="mailto:646109452@qq.com">写一封邮件</a>
+          <a class="btn btn--ghost" href="assets/files/resume-caoyongqian.pdf" download>下载简历<small>PDF</small></a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<!-- 页脚：画面一半，菜单一半 -->
+<footer class="close" id="footer">
+  <div class="close__media">
+    <img src="assets/img/still-b.jpg" alt="海边回望的人" width="1400" height="1000" loading="lazy">
+  </div>
+  <div class="close__menu">
+    <p class="close__mark">曹永谦 · Cao Yongqian</p>
+    <nav class="close__nav" aria-label="页脚导航">
+      <a href="#work">作品</a>
+      <a href="#about">关于</a>
+      <a href="#skills">能力</a>
+      <a href="#experience">经历</a>
+      <a href="#contact">联系</a>
+      <a href="assets/files/resume-caoyongqian.pdf" download>简历</a>
+    </nav>
+    <div class="close__cols">
+      <div>
+        <p class="close__label">联系方式</p>
+        <p><a href="mailto:646109452@qq.com">646109452@qq.com</a></p>
+        <p class="muted">155 8267 3061</p>
+        <p class="muted">现居杭州 · 可到岗</p>
+      </div>
+      <div>
+        <p class="close__label">别处</p>
+        <p><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></p>
+        <p><a href="tel:15582673061">打电话</a></p>
+        <p><a href="#top">回到顶部</a></p>
+      </div>
+    </div>
+    <div class="close__legal">
+      <p>© 2026 曹永谦。页面与全部产品界面均由本人设计与实现。</p>
+      <details class="credits">
+        <summary>素材与许可</summary>
+        <ul id="credits-list"></ul>
+      </details>
+    </div>
+  </div>
+</footer>
+
+<!-- 案例详情 -->
+<div class="detail" id="detail" role="dialog" aria-modal="true" aria-labelledby="detail-title" tabindex="-1" hidden>
+  <div class="detail__bar">
+    <button class="detail__back" id="detail-back" type="button">← 返回作品</button>
+    <button class="detail__close" id="detail-close" type="button" aria-label="关闭案例"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" focusable="false"><path d="M2 2l12 12M14 2L2 14" stroke="currentColor" stroke-width="1.7" fill="none"/></svg></button>
+    <span class="detail__pos" id="detail-pos"></span>
+  </div>
+  <article class="detail__article" id="detail-body"></article>
+  <div class="detail__nav" id="detail-nav"></div>
+</div>
+
+<!-- 附件查看 -->
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-name" tabindex="-1" hidden>
+  <div class="viewer__bar">
+    <p class="viewer__name" id="viewer-name"></p>
+    <div class="viewer__acts">
+      <a class="viewer__dl" id="viewer-dl" href="#" target="_blank" rel="noopener">下载 / 新窗口打开</a>
+      <button class="viewer__close" id="viewer-close" type="button" aria-label="关闭附件">关闭</button>
+    </div>
+  </div>
+  <div class="viewer__body">
+    <p class="viewer__hint" id="viewer-hint" hidden>这个预览框打不开 PDF 的话，用右上角的「下载 / 新窗口打开」，或者点「关闭」回到案例。</p>
+    <iframe id="viewer-frame" title="附件预览" src="about:blank"></iframe>
+  </div>
+</div>
+
+<!-- 图片放大 -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="放大的图片" tabindex="-1" hidden>
+  <button class="lightbox__close" id="lightbox-close" type="button" aria-label="关闭放大的图片">关闭</button>
+  <img id="lightbox-img" src="" alt="">
+  <p class="lightbox__cap" id="lightbox-cap"></p>
+</div>
+
+<p class="copy-toast" id="copy-toast" role="status" aria-live="polite"></p>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
