@@ -35,7 +35,7 @@
   const byId = {};
   S.projects.forEach((p, i) => { byId[p.id] = { p, i }; });
 
-  S.projects.forEach((p) => {
+  S.projects.forEach((p, idx) => {
     const li = el('li', 'ledger__row rv');
     li.dataset.id = p.id;
     const btn = el('button');
@@ -45,7 +45,7 @@
       '<span class="ledger__name">' + p.title + '</span>' +
       '<span class="ledger__year">' + p.year + '</span>' +
       '<span class="ledger__lead">' + p.lead + '</span>' +
-      '<img class="ledger__thumb" src="' + p.stage + '" alt="' + p.title + ' 界面" loading="lazy" width="1600" height="1000">';
+      '<img class="ledger__thumb" src="' + p.stage + '" alt="' + p.title + ' 界面" loading="' + (idx < 3 ? 'eager' : 'lazy') + '" decoding="async" width="1600" height="1000">';
     btn.addEventListener('click', () => { location.hash = '#/work/' + p.id; });
     btn.addEventListener('focus', () => focusRow(li));
     btn.addEventListener('blur', () => li.classList.remove('is-focus'));
