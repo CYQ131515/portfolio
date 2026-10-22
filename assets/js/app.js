@@ -267,6 +267,35 @@
     stageMap['p:' + p.id] = { src: p.stage, cap: p.title + ' · ' + p.subtitle };
   });
 
+  /* 窄屏没有 hover：让滚动本身去聚焦视口中心那一件 */
+  const narrow = window.matchMedia('(max-width: 900px)');
+  const workSec = $('#work');
+  function focusRowByScroll() {
+    if (!narrow.matches || !workSec) {
+      if (ledger.classList.contains('is-scrollfocus')) {
+        ledger.classList.remove('is-scrollfocus');
+        $$('.ledger__row', ledger).forEach((r) => r.classList.remove('is-focus'));
+      }
+      return;
+    }
+    const mid = window.innerHeight * 0.52;
+    const rows = $$('.ledger__row', ledger).filter((r) => !r.hidden);
+    let best = null;
+    let bestD = Infinity;
+    rows.forEach((row) => {
+      const b = row.getBoundingClientRect();
+      if (b.bottom < 0 || b.top > window.innerHeight) return;
+      const d = Math.abs((b.top + b.bottom) / 2 - mid);
+      if (d < bestD) { bestD = d; best = row; }
+    });
+    ledger.classList.add('is-scrollfocus');
+    rows.forEach((r) => r.classList.toggle('is-focus', r === best));
+    if (best) {
+      const p = byId[best.dataset.id] && byId[best.dataset.id].p;
+      if (p) setStage('p:' + p.id, p.title + ' · ' + p.subtitle);
+    }
+  }
+
   /* ---------------- 入场 ---------------- */
 
   const pending = new Set();
@@ -604,6 +633,7 @@
     ticking = true;
     requestAnimationFrame(() => {
       syncStageToScroll();
+      focusRowByScroll();
       sweep();
       ticking = false;
     });
@@ -617,6 +647,8 @@
   ['about', 'skills', 'experience'].forEach((k) => { if ('requestIdleCallback' in window) requestIdleCallback(() => preload(k)); else setTimeout(() => preload(k), 1200); });
 
   syncStageToScroll();
+  focusRowByScroll();
+  narrow.addEventListener('change', focusRowByScroll);
   route();
   setTimeout(sweep, 400);
   setTimeout(sweep, 1200);

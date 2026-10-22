@@ -498,6 +498,13 @@ main > section{padding-bottom:var(--gap)}
   .close{grid-template-columns:1fr}
   .close__media{min-height:46svh}
   .ledger__row{padding:16px 0}
+  /* 用更高特异度压过入场动画的 opacity:1 */
+  .js .ledger .ledger__row.is-in{opacity:.62}
+  .js .ledger .ledger__row.is-in.is-focus{opacity:1;background:var(--paper-2)}
+  .ledger__row{transition:opacity .45s var(--e),background .45s var(--e)}
+  .ledger__row.is-focus .ledger__name{transform:none}
+  .ledger__lead{color:var(--ink-3)}
+  .ledger__row.is-focus .ledger__lead{color:var(--ink-2)}
   .ledger__thumb{
     display:block;grid-column:1/-1;margin:10px 0 4px;
     width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:var(--paper-2);
