@@ -13,7 +13,7 @@ window.SITE = {
   email: "646109452@qq.com",
   phone: "15582673061",
   resume: "assets/files/resume-caoyongqian.pdf",
-  resumeSize: "217 KB",
+  resumeSize: "223 KB",
 
   hero: {
     title: ["懂算法开发，", "也懂 AI 产品落地。"],
@@ -288,6 +288,40 @@ window.SITE = {
       attachments: [],
     },
 
+    {
+      id: "skill-forge",
+      title: "技能锻造台",
+      subtitle: "Skill Forge · 把资料锻造成技能包",
+      category: "独立产品",
+      year: "2026",
+      kind: "产品设计 / 前端与本地服务 / Swift 桌面壳",
+      duration: "三个月",
+      stage: "assets/img/products/skillforge-welcome.jpg",
+      lead: "把散落的资料，一步步锻造成可以直接安装的 Agent Skill 技能包——引导式四步，全程本地。",
+      body: [
+        { t: "h", v: "为什么做它" },
+        { t: "p", v: "做 skill 的难点其实不在写，而在三件事：边界想不清楚、资料散落各处、写完不知道到底能不能用。Skill Forge 把它拆成一条有引导的流水线——投入资料、划清边界、锻造生成、导出交付，上一步做完才进入下一步。" },
+        { t: "fig", img: "assets/img/products/skillforge-welcome.jpg", cap: "首页：四种起点（从资料开始 / 从空白开始 / 导入已有技能包 / 看完整示例），下面是四步流程。" },
+        { t: "h", v: "每一步都设卡" },
+        { t: "p", v: "第一步把文档、笔记、脚本、截图拖进来，可以从标题、章节、编号步骤、「触发词：」行和 process.env.X 里自动起草名称、描述、触发词、步骤与权限。" },
+        { t: "p", v: "第二步是硬门槛：12 项完整性检查——技能名、标题、描述、适用场景、解决/不解决问题、触发词、输入、输出、权限、步骤、错误码。缺一项，「下一步」就是禁用的，并把缺口明确列出来，不让人糊里糊涂往下走。" },
+        { t: "fig", img: "assets/img/products/skillforge-boundary.jpg", cap: "能力边界：左边填，右边实时预览 SKILL.md 会写成什么样。" },
+        { t: "h", v: "校验的是能不能用，不是文风" },
+        { t: "p", v: "生成后会跑一遍上线契约校验，六类规则：frontmatter 与 kebab-case 命名、七个标准章节与超时兜底、资源引用与 node --check 脚本语法、密钥格式扫描、与本机已装技能的描述查重、测试规格是否覆盖正负例。" },
+        { t: "fig", img: "assets/img/products/skillforge-build.jpg", cap: "锻造生成：4 个文件、18.2 KB、0 错误 1 警告（警告是因为本机已装同名技能）。" },
+        { t: "h", v: "安全边界" },
+        { t: "p", v: "只监听 127.0.0.1，没有遥测也没有上传；只往 ~/Documents/技能工坊 写文件；上传的脚本只做语法检查、绝不执行；密钥只登记环境变量名，疑似密钥的字面量会被拒绝并脱敏。" },
+        { t: "fig", img: "assets/img/products/skillforge-export.jpg", cap: "导出交付：ZIP、Finder 打开，以及「解压 → 放进技能根 → 让 agent 路由」三步收尾。" },
+        { t: "h", v: "怎么实现的" },
+        { t: "p", v: "零依赖：后端是一个手写的 HTTP 服务，前端是原生 JS，ZIP 由自己写的实现打包（不引第三方库）；桌面壳是 Swift（NSWindow + WKWebView，启动时在内部拉起随机端口的 Node 服务，关窗即停）。平板和手机自动切成单栏 + 底部抽屉，390px 宽度没有横向滚动。" },
+        { t: "q", v: "不是文风检查，是上线契约校验。" },
+        { t: "h", v: "开源" },
+        { t: "p", v: "由我独立完成产品设计、前端、本地服务与 Swift 桌面壳，已开源到 GitHub：<a href=\"https://github.com/CYQ131515/skill-forge\" target=\"_blank\" rel=\"noopener\">github.com/CYQ131515/skill-forge</a>（MIT，含 8 个核心用例的测试）。macOS 安装包 1.3 MB，Apple Silicon 与 Intel 通用。" },
+      ],
+      attachments: [
+        { name: "Skill Forge · macOS 安装包", file: "assets/files/SkillForge-macos-universal.zip", size: "1.3 MB", note: "Universal（Apple Silicon + Intel），需 macOS 13+ 与本机 Node 20+" },
+      ],
+    },
   ],
 
   /* 能力：三组，像一张印刷的菜单 */
@@ -337,7 +371,7 @@ window.SITE = {
     "照片：Morgan Sessions（烟花）、Luke Pamer（雾中回望）、Caleb George（雪原）——Unsplash Licence",
     "照片：0x010C《2016-09 Monts Valin by night 05》、Audhwer《Through the Snow》——CC BY-SA 4.0，via Wikimedia Commons；本站做了裁切与调色",
     "视频：City at night — CC BY 3.0，Ocean surface waves — CC0，均来自 Wikimedia Commons",
-    "产品界面：LinkHand AI / JCEE STUDIO / 元七 AI / PatternFlow / Alevo / Sentinel-AI / MuseNex / Agent 智能工作台，均为本人产品的界面截图",
+    "产品界面：LinkHand AI / JCEE STUDIO / 元七 AI / PatternFlow / Alevo / Sentinel-AI / MuseNex / Agent 智能工作台 / Skill Forge，均为本人产品的界面截图",
     "「多模态」一栏的界面图按真实需求绘制，非客户系统原图",
   ],
 };
