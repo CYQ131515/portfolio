@@ -43,7 +43,7 @@ window.SITE = {
       kind: "产品设计 / Agent 编排 / 视频生成管线",
       duration: "约两个月",
       stage: "assets/img/products/gaft-film.jpg",
-      stageVideo: { src: "assets/video/gaft-film.mp4", poster: "assets/img/products/gaft-film.jpg" },
+      stageVideo: { src: "assets/video/gaft-film.mp4", poster: "assets/video/gaft-film-poster.jpg" },
       lead: "给产品图 + 模特图 + 一句「要什么视频」，一个导演 Agent 自己写脚本、换衣、拍摄、自检、返修，交付一条 30 秒以内的时尚短片。",
       body: [
         { t: "h", v: "输入只有三样东西" },
