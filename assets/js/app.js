@@ -203,6 +203,17 @@
     node.classList.add('is-on');
   }
 
+  // 项目视频用完之后，把展示位还给「江面」那条默认视频
+  function resetStageVideo() {
+    video.classList.remove('stage__video--contain');
+    video.pause();
+    if (!video.dataset.src) return;
+    delete video.dataset.src;
+    video.setAttribute('poster', 'assets/video/waves-poster.jpg');
+    video.src = 'assets/video/waves.webm';
+    video.load();
+  }
+
   function setStage(key, capText) {
     if (!stage || key === currentKey) return;
     currentKey = key;
@@ -225,12 +236,27 @@
 
     if (key === 'video') {
       preload('skills');
+      resetStageVideo();
       activate(video);
       if (!reduced()) { video.play().catch(() => {}); }
       return;
     }
-    video.pause();
     const cfg = stageMap[key];
+    // 项目自带的展示视频（竖屏成片，整幅显示）
+    if (cfg && cfg.video) {
+      const v = cfg.video;
+      if (video.dataset.src !== v.src) {
+        video.dataset.src = v.src;
+        video.setAttribute('poster', v.poster || '');
+        video.src = v.src;
+        video.load();
+      }
+      video.classList.add('stage__video--contain');
+      activate(video);
+      if (!reduced()) { video.play().catch(() => {}); }
+      return;
+    }
+    resetStageVideo();
     if (!cfg) return;
     const img = preload(key);
     if (img && img.complete && img.naturalWidth) activate(img);
@@ -264,7 +290,7 @@
   }
   // 每个项目一张图，注册进 stageMap
   S.projects.forEach((p) => {
-    stageMap['p:' + p.id] = { src: p.stage, cap: p.title + ' · ' + p.subtitle };
+    stageMap['p:' + p.id] = { src: p.stage, cap: p.title + ' · ' + p.subtitle, video: p.stageVideo || null };
   });
 
   /* 窄屏没有 hover：让滚动本身去聚焦视口中心那一件 */
@@ -398,7 +424,8 @@
           (b.cap ? '<figcaption>' + b.cap + '</figcaption>' : '') +
           '</figure>';
       } else if (b.t === 'video') {
-        out += '<figure><video controls preload="none" poster="' + b.still + '"><source src="' + b.src + '" type="video/webm"></video>' +
+        const vtype = /\.mp4$/i.test(b.src) ? 'video/mp4' : 'video/webm';
+        out += '<figure><video controls preload="none" playsinline poster="' + b.still + '"><source src="' + b.src + '" type="' + vtype + '"></video>' +
           (b.cap ? '<figcaption>' + b.cap + '</figcaption>' : '') + '</figure>';
       }
     });

@@ -92,6 +92,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .stage__label strong{font-family:var(--f-display);font-weight:400;font-size:var(--t-lead);color:var(--ink);letter-spacing:.01em;flex:none}
 .stage__label span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right;font-size:var(--t-small);color:var(--ink-3)}
 .stage__img--print.is-on{animation:none}
+.stage__video--contain{object-fit:contain;background:var(--paper-2)}
 .stage__img.is-on{animation:drift 26s ease-out forwards}
 .stage__video.is-on{animation:none}
 @keyframes drift{
@@ -250,10 +251,10 @@ main > section{padding-bottom:var(--gap)}
 .ledger__meta{font-size:var(--t-small);color:var(--ink-3);grid-column:1/-1}
 .ledger__lead{
   grid-column:1/-1;max-width:38ch;margin-top:6px;
-  font-size:var(--t-small);line-height:1.55;color:var(--ink-3);
+  font-size:var(--t-small);line-height:1.55;color:var(--ink-2);
   transition:color .3s var(--e);
 }
-.ledger__row:hover .ledger__lead,.ledger__row.is-focus .ledger__lead{color:var(--ink-2)}
+.ledger__row:hover .ledger__lead,.ledger__row.is-focus .ledger__lead{color:var(--ink)}
 .ledger__thumb{display:none}
 .ledger__empty{font-size:var(--t-small);color:var(--ink-3);padding:18px 0}
 
@@ -503,7 +504,7 @@ main > section{padding-bottom:var(--gap)}
   .js .ledger .ledger__row.is-in.is-focus{opacity:1;background:var(--paper-2)}
   .ledger__row{transition:opacity .45s var(--e),background .45s var(--e)}
   .ledger__row.is-focus .ledger__name{transform:none}
-  .ledger__lead{color:var(--ink-3)}
+  .ledger__lead{color:var(--ink-2)}
   .ledger__row.is-focus .ledger__lead{color:var(--ink-2)}
   .ledger__thumb{
     display:block;grid-column:1/-1;margin:10px 0 4px;
