@@ -81,7 +81,6 @@ window.SITE = {
       kind: "需求拆解 / AI 算法开发 / AI 模型训练 / 验收",
       duration: "七个月",
       stage: "assets/img/products/linkhand-create.jpg",
-      stageVideo: { src: "assets/video/m-aigc-stage.mp4", poster: "assets/video/m-aigc-stage-poster.jpg" },
       lead: "把设计师和美工的重复劳动交给模型：一张花型、一张线稿、一句中文，出一件衣服的正侧背三视图。",
       body: [
         { t: "h", v: "背景" },
@@ -112,7 +111,6 @@ window.SITE = {
       kind: "产品功能设计 / 算法开发 / 测试 / 验收",
       duration: "三个月",
       stage: "assets/img/work/job-2.png",
-      stageVideo: { src: "assets/video/m-multimodal-stage.mp4", poster: "assets/video/m-multimodal-stage-poster.jpg" },
       lead: "面向图像生成与智能交互，独立做选型、调试与验收，把口头验收变成一张打分表。",
       body: [
         { t: "h", v: "要解决的问题" },
@@ -137,7 +135,6 @@ window.SITE = {
       kind: "产品设计 / 网站交互设计 / 功能算法开发 / 验收",
       duration: "八个月",
       stage: "assets/img/products/jcee-home.jpg",
-      stageVideo: { src: "assets/video/m-3d-stage.mp4", poster: "assets/video/m-3d-stage-poster.jpg" },
       lead: "把一张款图变成可旋转、可试衣、可出动画的 3D 服装模型，再把它做成一个能对外卖的设计网站。",
       body: [
         { t: "h", v: "背景" },
@@ -172,7 +169,6 @@ window.SITE = {
       kind: "独立产品设计 / 交互与架构 / 落地方案",
       duration: "约四个月",
       stage: "assets/img/products/patternlib-library.jpg",
-      stageVideo: { src: "assets/video/m-patternlib-stage.mp4", poster: "assets/video/m-patternlib-stage-poster.jpg" },
       lead: "一个花型库，两种用法：设计师在商城挑图买图，业务在元七 AI 工作台里描稿、仿稿、管任务。",
       body: [
         { t: "h", v: "问题" },
@@ -207,7 +203,6 @@ window.SITE = {
       kind: "产品设计 / Agent 编排 / 全栈实现",
       duration: "五个月",
       stage: "assets/img/products/patternflow.png",
-      stageVideo: { src: "assets/video/patternflow-stage.mp4", poster: "assets/video/patternflow-stage-poster.jpg" },
       lead: "跟一个 Agent 说话，把「我想要法式小碎花」变成能上印花的四方连续和分层 PSD。",
       body: [
         { t: "h", v: "为什么做它" },
@@ -236,7 +231,6 @@ window.SITE = {
       kind: "产品设计 / PRD · TDD / 交互原型",
       duration: "四个月",
       stage: "assets/img/products/alevo-overview.png",
-      stageVideo: { src: "assets/video/alevo-stage.mp4", poster: "assets/video/alevo-stage-poster.jpg" },
       lead: "把「评测什么、怎么算分、多少分算过关」交给用户，让不懂评测的人也能把评测跑起来。",
       body: [
         { t: "h", v: "命题" },
@@ -262,7 +256,6 @@ window.SITE = {
       kind: "产品设计 / PRD V1.1 · TDD / 双端原型",
       duration: "三个月",
       stage: "assets/img/products/sentinel-pc.png",
-      stageVideo: { src: "assets/video/sentinel-stage.mp4", poster: "assets/video/sentinel-stage-poster.jpg" },
       lead: "一个 7×24 盯着其他项目后端的 Agent：发现、诊断、上报，授权之后转交修复 Agent，再验证闭环。",
       body: [
         { t: "h", v: "一句话" },
@@ -287,7 +280,6 @@ window.SITE = {
       kind: "产品设计 / PRD · 技术文档 / Electron 工程",
       duration: "五个月",
       stage: "assets/img/products/agent-roundtable.png",
-      stageVideo: { src: "assets/video/agent-workbench-stage.mp4", poster: "assets/video/agent-workbench-stage-poster.jpg" },
       lead: "让一群 Agent 开会、再让一群 Agent 把一个项目干完——本地跑的桌面工作台。",
       body: [
         { t: "h", v: "两个模块" },

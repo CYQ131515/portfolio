@@ -95,9 +95,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .stage__backdrop{
   position:absolute;inset:-10%;z-index:0;
   background-position:center;background-size:cover;
-  filter:blur(30px) saturate(1.05);
+  filter:blur(18px) saturate(1.04);
   opacity:0;transition:opacity .9s var(--e);
-  transform:scale(1.06);
+  transform:scale(1.04);
+  contain:paint;
 }
 .stage__backdrop.is-on{opacity:1}
 .stage__video--contain{object-fit:contain;z-index:1}

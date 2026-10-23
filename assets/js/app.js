@@ -247,7 +247,8 @@
     }
     const cfg = stageMap[key];
     // 项目自带的展示视频（竖屏成片，整幅显示）
-    if (cfg && cfg.video) {
+    // 窄屏不做视频：手机上只显示封面图，避免解码卡顿与流量
+    if (cfg && cfg.video && !window.matchMedia('(max-width: 900px)').matches) {
       const v = cfg.video;
       if (video.dataset.src !== v.src) {
         video.dataset.src = v.src;
