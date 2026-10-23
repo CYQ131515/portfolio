@@ -430,7 +430,7 @@
           '</figure>';
       } else if (b.t === 'video') {
         const vtype = /\.mp4$/i.test(b.src) ? 'video/mp4' : 'video/webm';
-        out += '<figure><video controls preload="none" playsinline poster="' + b.still + '"><source src="' + b.src + '" type="' + vtype + '"></video>' +
+        out += '<figure><video class="' + (b.portrait ? 'is-portrait' : '') + '" controls preload="none" playsinline poster="' + b.still + '"><source src="' + b.src + '" type="' + vtype + '"></video>' +
           (b.cap ? '<figcaption>' + b.cap + '</figcaption>' : '') + '</figure>';
       }
     });
