@@ -203,6 +203,7 @@ window.SITE = {
       kind: "产品设计 / Agent 编排 / 全栈实现",
       duration: "五个月",
       stage: "assets/img/products/patternflow.png",
+      stageVideo: { src: "assets/video/patternflow-stage.mp4", poster: "assets/video/patternflow-stage-poster.jpg" },
       lead: "跟一个 Agent 说话，把「我想要法式小碎花」变成能上印花的四方连续和分层 PSD。",
       body: [
         { t: "h", v: "为什么做它" },
@@ -231,6 +232,7 @@ window.SITE = {
       kind: "产品设计 / PRD · TDD / 交互原型",
       duration: "四个月",
       stage: "assets/img/products/alevo-overview.png",
+      stageVideo: { src: "assets/video/alevo-stage.mp4", poster: "assets/video/alevo-stage-poster.jpg" },
       lead: "把「评测什么、怎么算分、多少分算过关」交给用户，让不懂评测的人也能把评测跑起来。",
       body: [
         { t: "h", v: "命题" },
@@ -256,6 +258,7 @@ window.SITE = {
       kind: "产品设计 / PRD V1.1 · TDD / 双端原型",
       duration: "三个月",
       stage: "assets/img/products/sentinel-pc.png",
+      stageVideo: { src: "assets/video/sentinel-stage.mp4", poster: "assets/video/sentinel-stage-poster.jpg" },
       lead: "一个 7×24 盯着其他项目后端的 Agent：发现、诊断、上报，授权之后转交修复 Agent，再验证闭环。",
       body: [
         { t: "h", v: "一句话" },
@@ -280,6 +283,7 @@ window.SITE = {
       kind: "产品设计 / PRD · 技术文档 / Electron 工程",
       duration: "五个月",
       stage: "assets/img/products/agent-roundtable.png",
+      stageVideo: { src: "assets/video/agent-workbench-stage.mp4", poster: "assets/video/agent-workbench-stage-poster.jpg" },
       lead: "让一群 Agent 开会、再让一群 Agent 把一个项目干完——本地跑的桌面工作台。",
       body: [
         { t: "h", v: "两个模块" },
@@ -336,6 +340,7 @@ window.SITE = {
       kind: "产品设计 / 前端与本地服务 / Swift 桌面壳",
       duration: "三个月",
       stage: "assets/img/products/skillforge-welcome.jpg",
+      stageVideo: { src: "assets/video/skill-forge-stage.mp4", poster: "assets/video/skill-forge-stage-poster.jpg" },
       lead: "把散落的资料，一步步锻造成可以直接安装的 Agent Skill 技能包——引导式四步，全程本地。",
       body: [
         { t: "h", v: "为什么做它" },
@@ -403,6 +408,7 @@ window.SITE = {
       kind: "产品设计 / 历法与规则引擎 / 原生桌面壳",
       duration: "三个月",
       stage: "assets/img/products/meiri-home.jpg",
+      stageVideo: { src: "assets/video/meiri-yigua-stage.mp4", poster: "assets/video/meiri-yigua-stage-poster.jpg" },
       lead: "把「每天算一卦」做成一个双击就能打开的本地小应用：夜观星盘，晨读卦签。",
       body: [
         { t: "h", v: "它长什么样" },
