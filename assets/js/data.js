@@ -81,6 +81,7 @@ window.SITE = {
       kind: "需求拆解 / AI 算法开发 / AI 模型训练 / 验收",
       duration: "七个月",
       stage: "assets/img/products/linkhand-create.jpg",
+      stageVideo: { src: "assets/video/m-aigc-stage.mp4", poster: "assets/video/m-aigc-stage-poster.jpg" },
       lead: "把设计师和美工的重复劳动交给模型：一张花型、一张线稿、一句中文，出一件衣服的正侧背三视图。",
       body: [
         { t: "h", v: "背景" },
@@ -111,6 +112,7 @@ window.SITE = {
       kind: "产品功能设计 / 算法开发 / 测试 / 验收",
       duration: "三个月",
       stage: "assets/img/work/job-2.png",
+      stageVideo: { src: "assets/video/m-multimodal-stage.mp4", poster: "assets/video/m-multimodal-stage-poster.jpg" },
       lead: "面向图像生成与智能交互，独立做选型、调试与验收，把口头验收变成一张打分表。",
       body: [
         { t: "h", v: "要解决的问题" },
@@ -135,6 +137,7 @@ window.SITE = {
       kind: "产品设计 / 网站交互设计 / 功能算法开发 / 验收",
       duration: "八个月",
       stage: "assets/img/products/jcee-home.jpg",
+      stageVideo: { src: "assets/video/m-3d-stage.mp4", poster: "assets/video/m-3d-stage-poster.jpg" },
       lead: "把一张款图变成可旋转、可试衣、可出动画的 3D 服装模型，再把它做成一个能对外卖的设计网站。",
       body: [
         { t: "h", v: "背景" },
@@ -169,6 +172,7 @@ window.SITE = {
       kind: "独立产品设计 / 交互与架构 / 落地方案",
       duration: "约四个月",
       stage: "assets/img/products/patternlib-library.jpg",
+      stageVideo: { src: "assets/video/m-patternlib-stage.mp4", poster: "assets/video/m-patternlib-stage-poster.jpg" },
       lead: "一个花型库，两种用法：设计师在商城挑图买图，业务在元七 AI 工作台里描稿、仿稿、管任务。",
       body: [
         { t: "h", v: "问题" },
