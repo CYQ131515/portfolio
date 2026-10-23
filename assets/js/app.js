@@ -173,6 +173,7 @@
   const stageCache = {};
   let currentKey = 'hero';
   let stageTimer = null;
+  let stageVideoTimer = 0;
 
   const stageMap = {
     hero: { src: 'assets/img/man-at-night.jpg', cap: S.name + ' · ' + S.city },
@@ -250,20 +251,36 @@
     // 窄屏不做视频：手机上只显示封面图，避免解码卡顿与流量
     if (cfg && cfg.video && !window.matchMedia('(max-width: 900px)').matches) {
       const v = cfg.video;
-      if (video.dataset.src !== v.src) {
-        video.dataset.src = v.src;
-        video.setAttribute('poster', v.poster || '');
-        video.src = v.src;
-        video.load();
+      try {
+        if (video.dataset.src !== v.src) {
+          video.dataset.src = v.src;
+          video.setAttribute('poster', v.poster || '');
+          video.setAttribute('preload', 'metadata');
+          video.src = v.src;
+          video.load();
+        }
+        video.classList.add('stage__video--contain');
+        // 竖屏成片两侧留白太多：用同一张封面做一层模糊背景铺满
+        backdrop.style.backgroundImage = "url('" + (v.poster || '') + "')";
+        backdrop.classList.add('is-on');
+        activate(video);
+        if (!reduced()) { video.play().catch(() => {}); }
+        // 看门狗：2.5 秒还没换到目标视频，就退回封面图，避免卡在上一件作品
+        clearTimeout(stageVideoTimer);
+        stageVideoTimer = setTimeout(() => {
+          const cur = (video.currentSrc || '').split('/').pop();
+          const want = v.src.split('/').pop();
+          if (cur !== want || video.readyState < 2) {
+            activate(preload(key));
+            backdrop.classList.remove('is-on');
+          }
+        }, 2500);
+        return;
+      } catch (err) {
+        // 视频出问题就退回静态图，不能停在旧画面
       }
-      video.classList.add('stage__video--contain');
-      // 竖屏成片两侧留白太多：用同一张封面做一层模糊背景铺满
-      backdrop.style.backgroundImage = "url('" + (v.poster || '') + "')";
-      backdrop.classList.add('is-on');
-      activate(video);
-      if (!reduced()) { video.play().catch(() => {}); }
-      return;
     }
+    clearTimeout(stageVideoTimer);
     resetStageVideo();
     if (!cfg) return;
     const img = preload(key);
