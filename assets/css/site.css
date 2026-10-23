@@ -100,10 +100,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
   transform:scale(1.06);
 }
 .stage__backdrop.is-on{opacity:1}
-.stage__video--contain{
-  object-fit:contain;z-index:1;box-sizing:border-box;
-  padding:clamp(18px,3vh,32px) clamp(14px,2.2vw,26px);
-}
+.stage__video--contain{object-fit:contain;z-index:1}
 .stage__img.is-on{animation:drift 26s ease-out forwards}
 .stage__video.is-on{animation:none}
 @keyframes drift{
