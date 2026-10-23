@@ -231,7 +231,9 @@
     const isProject = key.indexOf('p:') === 0;
     stage.classList.toggle('is-print', isProject);
     if (isProject) {
-      const p = byId[key.slice(2)].p;
+      const rec = byId[key.slice(2)];
+      const p = rec && rec.p;
+      if (!p) return;
       $('#stage-label-title').textContent = p.title;
       $('#stage-label-meta').textContent = p.kind + ' · ' + p.year;
     }
@@ -660,15 +662,27 @@
   /* ---------------- 滚动驱动 ---------------- */
 
   let ticking = false;
-  function onScroll() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
+  let rafId = 0;
+  let fallbackId = 0;
+  function runScrollWork() {
+    if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
+    if (fallbackId) { clearTimeout(fallbackId); fallbackId = 0; }
+    try {
       syncStageToScroll();
       focusRowByScroll();
       sweep();
+    } catch (err) {
+      // 任何一次异常都不能让后面所有滚动失去响应
+    } finally {
       ticking = false;
-    });
+    }
+  }
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    // rAF 之外再加一层定时兜底：标签页被节流、rAF 不触发时也不会卡死
+    rafId = requestAnimationFrame(runScrollWork);
+    fallbackId = setTimeout(runScrollWork, 180);
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
