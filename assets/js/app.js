@@ -169,6 +169,7 @@
   const frame = $('.stage__frame', stage);
   const cap = $('#stage-cap');
   const video = $('#stage-video');
+  const backdrop = $('#stage-backdrop');
   const stageCache = {};
   let currentKey = 'hero';
   let stageTimer = null;
@@ -206,6 +207,7 @@
   // 项目视频用完之后，把展示位还给「江面」那条默认视频
   function resetStageVideo() {
     video.classList.remove('stage__video--contain');
+    if (backdrop) backdrop.classList.remove('is-on');
     video.pause();
     if (!video.dataset.src) return;
     delete video.dataset.src;
@@ -252,6 +254,9 @@
         video.load();
       }
       video.classList.add('stage__video--contain');
+      // 竖屏成片两侧留白太多：用同一张封面做一层模糊背景铺满
+      backdrop.style.backgroundImage = "url('" + (v.poster || '') + "')";
+      backdrop.classList.add('is-on');
       activate(video);
       if (!reduced()) { video.play().catch(() => {}); }
       return;
