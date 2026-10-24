@@ -13,7 +13,9 @@ window.SITE = {
   email: "646109452@qq.com",
   phone: "15582673061",
   resume: "assets/files/resume-caoyongqian.pdf",
-  resumeSize: "243 KB",
+  resumeSize: "248 KB",
+  site: "cyq-profile-home.fun",
+  siteUrl: "https://cyq-profile-home.fun/",
 
   hero: {
     title: ["懂算法开发，", "也懂 AI 产品落地。"],
