@@ -40,7 +40,7 @@ window.SITE = {
   projects: [
     {
       id: "gaft",
-      title: "GAFT · AI 导演",
+      title: "GAFT · AI 衣影",
       subtitle: "给两张图，自动出一条时尚短片",
       category: "独立产品",
       year: "2026",
@@ -68,7 +68,7 @@ window.SITE = {
         { t: "q", v: "前端只管「生成中」和成片，中间九步交给导演。" },
         { t: "h", v: "看一遍完整流程" },
         { t: "p", v: "下面是从上传两张图、写一句话，到看见成片的完整录屏（一分钟，含换衣、分镜、出片与交付）。" },
-        { t: "video", src: "assets/video/gaft-demo.mp4", still: "assets/video/gaft-demo-poster.jpg", cap: "AI 导演完整演示：需求 → 换衣 → 分镜 → 出片 → 交付。" },
+        { t: "video", src: "assets/video/gaft-demo.mp4", still: "assets/video/gaft-demo-poster.jpg", cap: "GAFT · AI 衣影完整演示：需求 → 换衣 → 分镜 → 出片 → 交付。" },
         { t: "p", v: "另外两条由它独立跑完的片子——一条来自全自动 Job，一条是 STILL WILD 风格测试。" },
         { t: "video", portrait: true, src: "assets/video/gaft-film-agent.mp4", still: "assets/video/gaft-film-agent-poster.jpg", cap: "Agent 全自动跑完的一条：从选定技能到交付，全程没有人工介入。" },
         { t: "video", portrait: true, src: "assets/video/gaft-film-still-wild.mp4", still: "assets/video/gaft-film-still-wild-poster.jpg", cap: "STILL WILD：换一个风格方向再跑一遍，验证脚本与分镜的可复用性。" },
